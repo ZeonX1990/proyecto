@@ -19,7 +19,7 @@ CREATE TABLE Alumno(
 
 CREATE TABLE Tecnologia(
     ID_Tecno varchar (50) CONSTRAINT Tecnologia_ID_Tecno_pk PRIMARY KEY,
-    nom text not null
+    nom text CONSTRAINT Tecnologia_nom not null
 );
 
 CREATE TABLE Evaluacion_interna (
@@ -71,15 +71,15 @@ CREATE TABLE Recibir (
 );
 
 CREATE TABLE Buscar (
-    ID_Tecno_Buscar int ,
-    CIF_NIF_Empresa_Buscar varchar (30) ,
+    ID_Tecno_Buscar int,
+    CIF_NIF_Empresa_Buscar varchar (30),
     CONSTRAINT Buscar_pk PRIMARY KEY(ID_Tecno_Buscar,CIF_NIF_Empresa_Buscar),
     CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno),
     CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa),
 );
 
 CREATE TABLE Dominar (
-    ID_Tecno_Dominar int ,
+    ID_Tecno_Dominar int,
     CIF_NIF_Empresa_Dominar varchar (30),
     CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,CIF_NIF_Empresa_Dominar),
     CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
