@@ -3,22 +3,22 @@ create database proyecto;
 \c proyecto
 
 CREATE TABLE Alumno(
-    DNI_Alumne varchar (15) PRIMARY KEY,
-    Nombre text not null,
-    Apellido text (30) not null,
-    Estado boolean not null,
-    NASS varchar (20) not null,
-    Ciclo varchar (30) not null,
-    Curso varchar (30) not null,
-    Telefono int not null,
-    Fecha_Inicio date not null,
-    Fecha_Finalizacion date not null,
-    Estado_Practica varchar (30) not null,
-    Tutor_Empresa text not null
+    DNI_Alumne varchar (15) CONSTRAINT Alumno_DNI_Alumne_pk PRIMARY KEY,
+    Nombre text CONSTRAINT Alumno_Nombre not null,
+    Apellido text (30) CONSTRAINT Alumno_Apellido not null,
+    Estado boolean CONSTRAINT Alumno_Estado not null,
+    NASS varchar (20) CONSTRAINT Alumno_NASS not null,
+    Ciclo varchar (30) CONSTRAINT Alumno_Ciclo not null,
+    Curso varchar (30) CONSTRAINT Alumno_Curso not null,
+    Telefono int CONSTRAINT Alumno_Telefono not null,
+    Fecha_Inicio date CONSTRAINT Alumno_Fecha_Inicio not null,
+    Fecha_Finalizacion date CONSTRAINT Alumno_Fecha_Finalizacion not null,
+    Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica not null,
+    Tutor_Empresa text CONSTRAINT Alumno_Tutor_Empresa not null
 );
 
 CREATE TABLE Tecnologia(
-    ID_Tecno varchar (50) PRIMARY KEY,
+    ID_Tecno varchar (50) CONSTRAINT Tecnologia_ID_Tecno_pk PRIMARY KEY,
     nom text not null
 );
 
