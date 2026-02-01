@@ -23,59 +23,65 @@ CREATE TABLE Tecnologia(
 );
 
 CREATE TABLE Evaluacion_interna (
-    ID_Evaluacion int PRIMARY KEY,
-    Observaciones text ,
-    RA2_IPO boolean not null,
-    Modules_troncales int not null,
-    Puntuacion int not null,
-    Trabajo_Equipo int not null,
-    Comunicacion int not null,
-    Puntualidad int not null,
-    Actitud int not null,
-    Nivel_Tecnico int not null,
-    Autonomia int not null
+    ID_Evaluacion int CONSTRAINT Evaluacion_interna_ID_Evaluacion_pk PRIMARY KEY,
+    Observaciones text,
+    RA2_IPO boolean CONSTRAINT Evaluacion_interna_RA2_IPO not null,
+    Modules_troncales int CONSTRAINT Evaluacion_interna_Modules_troncales not null,
+    Puntuacion int CONSTRAINT Evaluacion_interna_Puntuacion not null,
+    Trabajo_Equipo int CONSTRAINT Evaluacion_interna_Trabajo_Equipo not null,
+    Comunicacion int CONSTRAINT Evaluacion_interna_Comunicacion not null,
+    Puntualidad int CONSTRAINT Evaluacion_interna_Puntualidad not null,
+    Actitud int CONSTRAINT Evaluacion_interna_Actitud not null,
+    Nivel_Tecnico int CONSTRAINT Evaluacion_interna_Nivel_Tecnico not null,
+    Autonomia int CONSTRAINT Evaluacion_interna_Autonomia not null
 );
 
 CREATE TABLE Curriculum (
-    ID_Curriculum int PRIMARY KEY,
-    Enlace varchar (50) not null,
+    ID_Curriculum int CONSTRAINT Curriculum_ID_Curriculum_pk PRIMARY KEY,
+    Enlace varchar (50) CONSTRAINT Curriculum_Enlace not null,
     Resumen varchar (50),
-    Estado varchar (50) not null,
-    Version varchar (50) not null,
-    Fecha_Creacion date not null,
-    Fecha_Actualizacion date not null
+    Estado varchar (50) CONSTRAINT Curriculum_Estado not null,
+    Version varchar (50) CONSTRAINT Curriculum_Version not null,
+    Fecha_Creacion date CONSTRAINT Curriculum_Fecha_Creacion not null,
+    Fecha_Actualizacion date CONSTRAINT Curriculum_Fecha_Actualizacion not null
 
 );
 
 CREATE TABLE Empresa (
-    CIF_NIF_Empresa varchar (30) PRIMARY KEY,
-    DUAL boolean not null,
-    Ubicacion varchar (30) not null,
-    Telefono int not null,
-    Sector varchar (30) not null,
-    Nombre text not null
+    CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
+    DUAL boolean CONSTRAINT Empresa_DUAL not null,
+    Ubicacion varchar (30) CONSTRAINT Empresa_Ubicacion not null,
+    Telefono int CONSTRAINT Empresa_Telefono not null,
+    Sector varchar (30) CONSTRAINT Empresa_Sector not null,
+    Nombre text CONSTRAINT Empresa_Nombre not null
 );
 
 CREATE TABLE Recibir (
-    ID_Curriculum int ,
-    CIF_NIF_Empresa varchar ,
+    ID_Curriculum_Recibir int,
+    CIF_NIF_Empresa_Recibir varchar,
     Historial_Contacto varchar (999),
-    Data_Entrevista date not null,
-    Data_Respuesta date not null,
-    Notas decimal (2,2) not null,
-    Estado varchar (30) not null,
-    Data_Enviamiento date not null ,
-    PRIMARY KEY(ID_Curriculum,CIF_NIF_Empresa),
+    Data_Entrevista date CONSTRAINT Recibir_Data_Entrevista not null,
+    Data_Respuesta date CONSTRAINT Recibir_Data_Respuesta not null,
+    Notas decimal (2,2) CONSTRAINT Recibir_Notas not null,
+    Estado varchar (30) CONSTRAINT Recibir_Estado not null,
+    Data_Enviamiento date CONSTRAINT Recibir_Data_Enviamiento not null,
+    CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
+    CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),
+    CONSTRAINT Recibir_CIF_NIF_Empresa_Recibir_fk FOREIGN KEY (CIF_NIF_Empresa_Recibir) REFERENCES Empresa(CIF_NIF_Empresa),
 );
 
 CREATE TABLE Buscar (
-    ID_Tecno int ,
-    CIF_NIF_Empresa varchar (30) ,
-    PRIMARY KEY(ID_Tecno,CIF_NIF_Empresa),
+    ID_Tecno_Buscar int ,
+    CIF_NIF_Empresa_Buscar varchar (30) ,
+    CONSTRAINT Buscar_pk PRIMARY KEY(ID_Tecno_Buscar,CIF_NIF_Empresa_Buscar),
+    CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno),
+    CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa),
 );
 
 CREATE TABLE Dominar (
-    ID_Tecno int ,
-    CIF_NIF_Empresa varchar (30),
-    PRIMARY KEY(ID_Tecno,ID_ALUMNO),
+    ID_Tecno_Dominar int ,
+    CIF_NIF_Empresa_Dominar varchar (30),
+    CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,CIF_NIF_Empresa_Dominar),
+    CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
+    CONSTRAINT Dominar_CIF_NIF_Empresa_Dominar_fk FOREIGN KEY (CIF_NIF_Empresa_Dominar) REFERENCES Empresa(CIF_NIF_Empresa),
 );
