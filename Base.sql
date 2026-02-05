@@ -67,7 +67,7 @@ CREATE TABLE Recibir (
     Data_Enviamiento date CONSTRAINT Recibir_Data_Enviamiento not null,
     CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
     CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),
-    CONSTRAINT Recibir_CIF_NIF_Empresa_Recibir_fk FOREIGN KEY (CIF_NIF_Empresa_Recibir) REFERENCES Empresa(CIF_NIF_Empresa),
+    CONSTRAINT Recibir_CIF_NIF_Empresa_Recibir_fk FOREIGN KEY (CIF_NIF_Empresa_Recibir) REFERENCES Empresa(CIF_NIF_Empresa)
 );
 
 CREATE TABLE Buscar (
@@ -75,7 +75,7 @@ CREATE TABLE Buscar (
     CIF_NIF_Empresa_Buscar varchar (30),
     CONSTRAINT Buscar_pk PRIMARY KEY(ID_Tecno_Buscar,CIF_NIF_Empresa_Buscar),
     CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno),
-    CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa),
+    CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa)
 );
 
 CREATE TABLE Dominar (
@@ -83,5 +83,5 @@ CREATE TABLE Dominar (
     CIF_NIF_Empresa_Dominar varchar (30),
     CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,CIF_NIF_Empresa_Dominar),
     CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
-    CONSTRAINT Dominar_CIF_NIF_Empresa_Dominar_fk FOREIGN KEY (CIF_NIF_Empresa_Dominar) REFERENCES Empresa(CIF_NIF_Empresa),
+    CONSTRAINT Dominar_CIF_NIF_Empresa_Dominar_fk FOREIGN KEY (CIF_NIF_Empresa_Dominar) REFERENCES Empresa(CIF_NIF_Empresa)
 );
