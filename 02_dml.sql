@@ -1,0 +1,33 @@
+INSERT INTO Alumno VALUES (34812321W, 'Juan', 'Perez', true, '123456789', 'Informática', '1º ASIX', 123456789, '2023-09-01', '2024-06-30', 'En proceso', 'Pep');
+INSERT INTO Alumno VALUES (34812322W, 'Maria', 'Gomez', true, '987654321', 'Informática', '1º DAW', 987654321, '2023-09-01', '2024-06-30', 'En proceso', 'Jose');
+INSERT INTO Alumno VALUES (34812323W, 'Luis', 'Lopez', true, '456789123', 'Informática', '1º ASIX', 456789123, '2023-09-01', '2024-06-30', 'En proceso', 'Ana');
+INSERT INTO Alumno VALUES (34812324W, 'Ana', 'Martinez', true, '789123456', 'Informática', '1º DAW', 789123456, '2023-09-01', '2024-06-30', 'En proceso', 'Carlos');
+INSERT INTO Alumno VALUES (34812325W, 'Carlos', 'Garcia', true  , '321654987', 'Informática', '1º ASIX', 321654987, '2023-09-01', '2024-06-30', 'En proceso', 'Lucia');
+INSERT INTO Alumno VALUES (34812326W, 'Lucia', 'Sanchez', true, '654987321', 'Informática', '1º DAW', 654987321, '2023-09-01', '2024-06-30', 'En proceso', 'Miguel');
+INSERT INTO Alumno VALUES (34812327W, 'Miguel', 'Diaz', true, '789456123', 'Informática', '1º DAM', 789456123, '2023-09-01', '2024-06-30', 'En proceso', 'Sofia');
+INSERT INTO Alumno VALUES (34812328W, 'Sofia', 'Fernandez', true, '321789654', 'Informática', '1º DAW', 321789654, '2023-09-01', '2024-06-30', 'En proceso', 'David');
+INSERT INTO Alumno VALUES (34812329W, 'David', 'Gonzalez', true, '654321789', 'Informática', '1º DAW', 654321789, '2023-09-01', '2024-06-30', 'En proceso', 'Laura');
+INSERT INTO Alumno VALUES (34812330W, 'Laura', 'Rodriguez', true, '987321654', 'Informática', '1º DAM', 987321654, '2023-09-01', '2024-06-30', 'En proceso', 'Javier');
+INSERT INTO Alumno VALUES (34812331W, 'Javier', 'Sanchez', true, '123789456', 'Informática', '1º DAW', 123789456, '2023-09-01', '2024-06-30', 'En proceso', 'Sara');
+INSERT INTO Alumno VALUES (34812332W, 'Sara', 'Lopez', true, '789321654', 'Informática', '1º DAW', 789321654, '2023-09-01', '2024-06-30', 'En proceso', 'Alberto');
+INSERT INTO Alumno VALUES (34812333W, 'Alberto', 'Martinez', true, '321456789', 'Informática', '1º ASIX', 321456789, '2023-09-01', '2024-06-30', 'En proceso', 'Marta');
+INSERT INTO Alumno VALUES (34812334W, 'Marta', 'Garcia', true, '654123789', 'Informática', '1º ASIX', 654123789, '2023-09-01', '2024-06-30', 'En proceso', 'Pablo');
+INSERT INTO Alumno VALUES (34812335W, 'Pablo', 'Sanchez', true, '987654321', 'Informática', '1º DAW', 987654321, '2023-09-01', '2024-06-30', 'En proceso', 'Sofia');
+INSERT INTO Alumno VALUES (34812336W, 'Sofia', 'Diaz', true, '123456789', 'Informática', '1º DAM', 123456789, '2023-09-01', '2024-06-30', 'En proceso', 'Miguel');
+INSERT INTO Alumno VALUES (34812337W, 'Miguel', 'Fernandez', true, '456789123', 'Informática', '1º DAW', 456789123, '2023-09-01', '2024-06-30', 'En proceso', 'Carlos');
+INSERT INTO Alumno VALUES (34812338W, 'Carlos', 'Gonzalez', true, '789123456', 'Informática', '1º DAW', 789123456, '2023-09-01', '2024-06-30', 'En proceso', 'Ana');
+INSERT INTO Alumno VALUES (34812339W, 'Ana', 'Rodriguez', true, '321654987', 'Informática', '1º DAM', 321654987, '2023-09-01', '2024-06-30', 'En proceso', 'Lucia');
+INSERT INTO Alumno VALUES (34812340W, 'Lucia', 'Sanchez', true, '654987321', 'Informática', '1º DAW', 654987321, '2023-09-01', '2024-06-30', 'En proceso', 'David');
+
+INSERT INTO Empresa VALUES ('A12345678', false, 'Barcelona', 123456789, 'Tecnología', 'TechCorp');
+INSERT INTO Empresa VALUES ('B98765432', true, 'Barcelona', 987654321, 'Finanzas', 'FinanCorp');
+INSERT INTO Empresa VALUES ('C45678912', false, 'Barcelona', 456789123, 'Salud', 'HealthCorp');
+INSERT INTO Empresa VALUES ('D78912345', false, 'Barcelona', 789123456, 'Educación', 'EduCorp');
+INSERT INTO Empresa VALUES ('E32165498', true, 'Barcelona', 321654987, 'Turismo', 'TourCorp');
+INSERT INTO Empresa VALUES ('F65498732', false, 'Barcelona', 654987321, 'Construcción', 'BuildCorp');
+INSERT INTO Empresa VALUES ('G78945612', false, 'Barcelona', 789456123, 'Transporte', 'TransCorp');
+INSERT INTO Empresa VALUES ('H32178965', true, 'Barcelona', 321789654, 'Energía', 'EnergyCorp');
+INSERT INTO Empresa VALUES ('I65432178', false, 'Barcelona', 654321789, 'Alimentación', 'FoodCorp');
+INSERT INTO Empresa VALUES ('J98732165', false, 'Barcelona', 987321654, 'Moda', 'FashionCorp');
+
+INSERT INTO Curriculum VALUES (1, 'https://example.com/curriculum1', 'Resumen del curriculum 1', 'Activo', '1.0', '2023-09-01', '2023-09-15');
