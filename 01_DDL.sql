@@ -6,7 +6,7 @@ CREATE TABLE Alumno(
     DNI_Alumne varchar (15) CONSTRAINT Alumno_DNI_Alumne_pk PRIMARY KEY,
     Nombre text CONSTRAINT Alumno_Nombre not null,
     Apellido text (30) CONSTRAINT Alumno_Apellido not null,
-    Estado boolean CONSTRAINT Alumno_Estado not null,
+    Estado varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='actiu' OR Estado ='baixa'),
     NASS varchar (20),
     Ciclo varchar (30) CONSTRAINT Alumno_Ciclo not null,
     Curso varchar (30) CONSTRAINT Alumno_Curso not null,
@@ -25,7 +25,7 @@ CREATE TABLE Tecnologia(
 CREATE TABLE Evaluacion_interna (
     ID_Evaluacion int CONSTRAINT Evaluacion_interna_ID_Evaluacion_pk PRIMARY KEY,
     Observaciones text,
-    RA2_IPO boolean,
+    RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (Estado ='aprovat' OR Estado ='suspes'),
     Modules_troncales int,
     Puntuacion int,
     Trabajo_Equipo int,
@@ -41,7 +41,7 @@ CREATE TABLE Curriculum (
     DNI_Alumne_Curriculum varchar (15),
     Enlace varchar (50) CONSTRAINT Curriculum_Enlace not null,
     Resumen varchar (50),
-    Estado varchar (50) CONSTRAINT Curriculum_Estado not null,
+    Estado varchar (50) CONSTRAINT Curriculum_Estado NOT NULL CHECK (Estado ='actiu' OR Estado ='obsolet'),
     Version varchar (50),
     Fecha_Creacion date,
     Fecha_Actualizacion date,
@@ -50,7 +50,7 @@ CREATE TABLE Curriculum (
 
 CREATE TABLE Empresa (
     CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
-    DUAL boolean CONSTRAINT Empresa_DUAL not null,
+    DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (Estado ='intensiva' OR Estado ='general' OR Estado ='ambdues'),
     Ubicacion varchar (30) CONSTRAINT Empresa_Ubicacion not null,
     Telefono int CONSTRAINT Empresa_Telefono not null,
     Sector varchar (30) CONSTRAINT Empresa_Sector not null,
