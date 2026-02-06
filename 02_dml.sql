@@ -29,3 +29,5 @@ INSERT INTO Empresa VALUES ('G78945612', false, 'Barcelona', 789456123, 'Transpo
 INSERT INTO Empresa VALUES ('H32178965', true, 'Barcelona', 321789654, 'Energía', 'EnergyCorp');
 INSERT INTO Empresa VALUES ('I65432178', false, 'Barcelona', 654321789, 'Alimentación', 'FoodCorp');
 INSERT INTO Empresa VALUES ('J98732165', false, 'Barcelona', 987321654, 'Moda', 'FashionCorp');
+
+INSERT INTO Curriculum VALUES (1, 'https://example.com/curriculum1', 'Resumen del curriculum 1', 'Activo', '1.0', '2023-09-01', '2023-09-15');
