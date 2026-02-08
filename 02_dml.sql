@@ -2,10 +2,11 @@ DELETE FROM Alumno;
 DELETE FROM Empresa;
 DELETE FROM Curriculum;
 DELETE FROM Recibir;
+DELETE FROM Tecnologia;
 DELETE FROM Buscar;
 DELETE FROM Dominar;
 DELETE FROM Evaluacion_interna;
-DELETE FROM Tecnologia;
+
 
 
 INSERT INTO Alumno VALUES ('34892751C', 'Juan', 'Perez', 'baixa', '123456789', 'Informática', '1º ASIX', 123456789, NULL, NULL, NULL, NULL);
