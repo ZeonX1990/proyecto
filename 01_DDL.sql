@@ -66,13 +66,8 @@ CREATE TABLE Recibir (
     Historial_Contacto varchar (999),
     Data_Entrevista date,
     Data_Respuesta date,
-<<<<<<< HEAD
-    Notas decimal (2,2),
-    Estado varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='acceptada' OR Estado ='rebutjada'),,
-=======
     Notas decimal (3,2),
-    Estado varchar (30) CONSTRAINT Recibir_Estado NOT NULL CHECK (Estado ='vist' OR Estado ='enviat' OR Estado ='entrevista' OR Estado ='rebutjat' OR Estado ='acceptat'),
->>>>>>> 9b8ae94b007f4ab4a5f5836e0ea39d483688bd65
+    Estado_Recibir varchar (30) CONSTRAINT Recibir_Estado NOT NULL CHECK (Estado ='vist' OR Estado ='enviat' OR Estado ='entrevista' OR Estado ='rebutjat' OR Estado ='acceptat'),
     Data_Enviamiento date,
     CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
     CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),
