@@ -2,10 +2,17 @@ SELECT DNI_Alumne_Evaluacion_interna,Puntuacion
 FROM Evaluacion_interna
 ORDER BY DNI_Alumne_Evaluacion_interna DESC;
 
-SELECT DNI_Alumne_Evaluacion_interna,Estado_Asignado
+SELECT 
+    a.Nombre,a.Apellido,e.RA2_IPO AS Estado_RA2,
+    (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) AS Puntuacion_Global
+FROM Evaluacion_interna e
+JOIN Alumno a ON a.DNI_Alumne = e.DNI_Alumne_Evaluacion_interna
+ORDER BY Puntuacion_Global DESC;
+
+SELECT DNI_Alumne,Estado_Asignado
 FROM Alumno
-WHERE Estado_Practica = "NULL"
-;
+WHERE Estado_Practica IS NULL
+LIMIT 5;
 
 SELECT COUNT(Data_Enviamiento)
 FROM Empresa

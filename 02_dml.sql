@@ -136,3 +136,13 @@ INSERT INTO Dominar VALUES ('TEC006', '87271607Q');
 INSERT INTO Dominar VALUES ('TEC007', '90592290M');
 INSERT INTO Dominar VALUES ('TEC008', '81327694Q');
 INSERT INTO Dominar VALUES ('TEC009', '01924253G');
+
+
+
+INSERT INTO Evaluacion_interna VALUES (1, '34812322W', 'Alumna muy aplicada con gran capacidad de aprendizaje.', 'aprovat', 5, 9, 9, 8, 10, 9, 9, 8);
+INSERT INTO Evaluacion_interna VALUES (2, '34892751C', 'Abandono del ciclo a mitad de semestre por motivos personales.', 'suspes', 2, 3, 4, 3, 2, 2, 3, 1);
+INSERT INTO Evaluacion_interna VALUES (3, '34870225M', 'Buen nivel técnico, pero debe mejorar la puntualidad.', 'aprovat', 4, 7, 7, 7, 5, 8, 8, 7);
+INSERT INTO Evaluacion_interna VALUES (4, '34812324J', 'Excelente actitud y trabajo en equipo. Candidata ideal para DUAL.', 'aprovat', 5, 8, 10, 9, 9, 10, 7, 9);
+INSERT INTO Evaluacion_interna VALUES (5, '01924253G', 'Perfil técnico sólido en robótica. Muy autónomo.', 'aprovat', 4, 8, 6, 7, 8, 8, 10, 10);
+INSERT INTO Evaluacion_interna VALUES (6, '34819182W', 'Buen desempeño general, falta reforzar comunicación.', 'aprovat', 4, 6, 7, 5, 8, 7, 6, 6);
+INSERT INTO Evaluacion_interna VALUES (7, '34812327S', 'No superó los módulos troncales. Falta de interés.', 'suspes', 1, 2, 3, 2, 4, 2, 2, 2);
