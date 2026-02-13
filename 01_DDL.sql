@@ -6,7 +6,8 @@ CREATE TABLE Alumno(
     DNI_Alumne varchar (15) CONSTRAINT Alumno_DNI_Alumne_pk PRIMARY KEY,
     Nombre text CONSTRAINT Alumno_Nombre not null,
     Apellido text (30) CONSTRAINT Alumno_Apellido not null,
-    Estado varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='actiu' OR Estado ='baixa'),
+    Estado_Alumne varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='actiu' OR Estado ='baixa'),
+    Estado_Asignado boolean (10) CONSTRAINT Alumno_Estado not null,
     NASS varchar (20),
     Ciclo varchar (30) CONSTRAINT Alumno_Ciclo not null,
     Curso varchar (30) CONSTRAINT Alumno_Curso not null,
@@ -24,6 +25,7 @@ CREATE TABLE Tecnologia(
 
 CREATE TABLE Evaluacion_interna (
     ID_Evaluacion int CONSTRAINT Evaluacion_interna_ID_Evaluacion_pk PRIMARY KEY,
+    DNI_Alumne_Evaluacion_interna varchar (15),
     Observaciones text,
     RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (Estado ='aprovat' OR Estado ='suspes'),
     Modules_troncales int,
@@ -34,6 +36,7 @@ CREATE TABLE Evaluacion_interna (
     Actitud int,
     Nivel_Tecnico int,
     Autonomia int 
+    CONSTRAINT Evaluacion_interna_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Evaluacion_interna) REFERENCES Alumno(DNI_Alumne)
 );
 
 CREATE TABLE Curriculum (
@@ -64,7 +67,7 @@ CREATE TABLE Recibir (
     Data_Entrevista date,
     Data_Respuesta date,
     Notas decimal (2,2),
-    Estado varchar (30),
+    Estado varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='acceptada' OR Estado ='rebutjada'),,
     Data_Enviamiento date,
     CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
     CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),

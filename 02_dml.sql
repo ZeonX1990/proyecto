@@ -8,7 +8,7 @@ DELETE FROM Evaluacion_interna;
 DELETE FROM Tecnologia;
 
 
-INSERT INTO Alumno VALUES (34892751C, 'Juan', 'Perez', true,         '123456789', 'Informática', '1º ASIX', 123456789);
+INSERT INTO Alumno VALUES (34892751C, 'Juan', 'Perez', true,'123456789', 'Informática', '1º ASIX', 123456789);
 INSERT INTO Alumno VALUES (34812322W, 'Maria', 'Gomez', true, '987654321', 'Informática', '1º DAW', 987654321, '2023-09-02', '2024-05-22', 'En proceso', 'Jose');
 INSERT INTO Alumno VALUES (34295423W, 'Luis', 'Lopez', true, '456789123', 'Informática', '1º ASIX', 456789123);
 INSERT INTO Alumno VALUES (34812324J, 'Ana', 'Martinez', true, '789123456', 'Informática', '1º DAW', 789123456, '2023-09-05', '2024-07-21', 'En proceso', 'Carlos');
