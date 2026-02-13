@@ -4,7 +4,7 @@ ORDER BY DNI_Alumne_Evaluacion_interna DESC;
 
 SELECT DNI_Alumne_Evaluacion_interna,Estado_Asignado
 FROM Alumno
-WHERE Estado_Asignado = false
+WHERE Estado_Practica = "NULL"
 ;
 
 SELECT COUNT(Data_Enviamiento)
