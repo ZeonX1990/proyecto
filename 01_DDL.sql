@@ -14,7 +14,7 @@ CREATE TABLE Alumno(
     Telefono int CONSTRAINT Alumno_Telefono not null,
     Fecha_Inicio date,
     Fecha_Finalizacion date,
-    Estado_Practica varchar (30),
+    Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica CHECK (Estado_Practica ='proposada' OR Estado_Practica ='confirmada' OR Estado_Practica ='finalitzada' OR Estado_Practica ='cancelada'),
     Tutor_Empresa text
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE Evaluacion_interna (
     ID_Evaluacion int CONSTRAINT Evaluacion_interna_ID_Evaluacion_pk PRIMARY KEY,
     DNI_Alumne_Evaluacion_interna varchar (15),
     Observaciones text,
-    RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (Estado ='aprovat' OR Estado ='suspes'),
+    RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (RA2_IPO ='aprovat' OR RA2_IPO ='suspes'),
     Modules_troncales int,
     Puntuacion int,
     Trabajo_Equipo int,
@@ -53,7 +53,7 @@ CREATE TABLE Curriculum (
 
 CREATE TABLE Empresa (
     CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
-    DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (Estado ='intensiva' OR Estado ='general' OR Estado ='ambdues'),
+    DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (DUAL ='intensiva' OR DUAL ='general' OR DUAL ='ambdues'),
     Ubicacion varchar (30) CONSTRAINT Empresa_Ubicacion not null,
     Telefono int CONSTRAINT Empresa_Telefono not null,
     Sector varchar (30) CONSTRAINT Empresa_Sector not null,
@@ -66,8 +66,13 @@ CREATE TABLE Recibir (
     Historial_Contacto varchar (999),
     Data_Entrevista date,
     Data_Respuesta date,
+<<<<<<< HEAD
     Notas decimal (2,2),
     Estado varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado ='acceptada' OR Estado ='rebutjada'),,
+=======
+    Notas decimal (3,2),
+    Estado varchar (30) CONSTRAINT Recibir_Estado NOT NULL CHECK (Estado ='vist' OR Estado ='enviat' OR Estado ='entrevista' OR Estado ='rebutjat' OR Estado ='acceptat'),
+>>>>>>> 9b8ae94b007f4ab4a5f5836e0ea39d483688bd65
     Data_Enviamiento date,
     CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
     CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),
@@ -75,7 +80,7 @@ CREATE TABLE Recibir (
 );
 
 CREATE TABLE Buscar (
-    ID_Tecno_Buscar int,
+    ID_Tecno_Buscar varchar (50),
     CIF_NIF_Empresa_Buscar varchar (30),
     CONSTRAINT Buscar_pk PRIMARY KEY(ID_Tecno_Buscar,CIF_NIF_Empresa_Buscar),
     CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno),
@@ -83,9 +88,9 @@ CREATE TABLE Buscar (
 );
 
 CREATE TABLE Dominar (
-    ID_Tecno_Dominar int,
-    CIF_NIF_Empresa_Dominar varchar (30),
-    CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,CIF_NIF_Empresa_Dominar),
+    ID_Tecno_Dominar varchar (50),
+    DNI_Alumne_Dominar varchar (30),
+    CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,DNI_Alumne_Dominar),
     CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
-    CONSTRAINT Dominar_CIF_NIF_Empresa_Dominar_fk FOREIGN KEY (CIF_NIF_Empresa_Dominar) REFERENCES Empresa(CIF_NIF_Empresa)
+    CONSTRAINT Dominar_DNI_Alumne_Dominar_fk FOREIGN KEY (DNI_Alumne_Dominar) REFERENCES Alumno(DNI_Alumne)
 );
