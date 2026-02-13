@@ -1,6 +1,6 @@
 SELECT DNI_Alumne_Evaluacion_interna,Puntuacion
 FROM Evaluacion_interna
-ORDER BY DESC;
+ORDER BY DNI_Alumne_Evaluacion_interna DESC;
 
 SELECT DNI_Alumne_Evaluacion_interna,Estado_Asignado
 FROM Alumno
