@@ -7,7 +7,6 @@ CREATE TABLE Alumno(
     Nombre varchar CONSTRAINT Alumno_Nombre not null,
     Apellido varchar (30) CONSTRAINT Alumno_Apellido not null,
     Estado_Alumne varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado_Alumne ='actiu' OR Estado_Alumne ='baixa'),
-    Estado_Asignado boolean CONSTRAINT Alumno_Estado_Asignado not null,
     NASS varchar (20),
     Ciclo varchar (30) CONSTRAINT Alumno_Ciclo not null,
     Curso varchar (30) CONSTRAINT Alumno_Curso not null,
