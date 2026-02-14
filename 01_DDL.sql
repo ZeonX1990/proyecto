@@ -16,7 +16,7 @@ CREATE TABLE Alumno(
     Fecha_Finalizacion date,
     Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica CHECK (Estado_Practica ='proposada' OR Estado_Practica ='confirmada' OR Estado_Practica ='finalitzada' OR Estado_Practica ='cancelada'),
     Tutor_Empresa varchar
-    CONSTRAINT Recibir_CIF_NIF_Empresa_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa),
+    CONSTRAINT Alumno_CIF_NIF_Empresa_Alumno_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa),
 
 );
 
@@ -31,7 +31,6 @@ CREATE TABLE Evaluacion_interna (
     Observaciones varchar,
     RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (RA2_IPO ='aprovat' OR RA2_IPO ='suspes'),
     Modules_troncales int,
-    Puntuacion int,
     Trabajo_Equipo int,
     Comunicacion int,
     Puntualidad int,
