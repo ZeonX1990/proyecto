@@ -10,22 +10,22 @@ DELETE FROM Evaluacion_interna;
 
 
 INSERT INTO Alumno VALUES ('34892751C', 'Juan', 'Perez', 'baixa', '123456789', 'Informática', '1º ASIX', 123456789, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('34812322W', 'Maria', 'Gomez', 'actiu', '987654321', 'Informática', '1º DAW', 987654321, '2023-09-16', '2023-09-25', 'confirmada', 'Jose');
+INSERT INTO Alumno VALUES ('34812322W', 'A12345678', 'Maria', 'Gomez', 'actiu', '987654321', 'Informática', '1º DAW', 987654321, '2023-09-16', '2023-09-25', 'confirmada', 'Jose');
 INSERT INTO Alumno VALUES ('34295423W', 'Luis', 'Lopez', 'baixa', '456789123', 'Informática', '1º ASIX', 456789123, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('34812324J', 'Ana', 'Martinez', 'actiu', '789123456', 'Informática', '1º DAW', 789123456, '2023-09-21', '2023-10-01', 'confirmada', 'Carlos');
-INSERT INTO Alumno VALUES ('34870225M', 'Carlos', 'Garcia', 'actiu', '321654987', 'Informática', '1º ASIX', 321654987, '2023-09-24', '2023-10-08', 'confirmada', 'Lucia');
+INSERT INTO Alumno VALUES ('34812324J', 'C45678912', 'Ana', 'Martinez', 'actiu', '789123456', 'Informática', '1º DAW', 789123456, '2023-09-21', '2023-10-01', 'confirmada', 'Carlos');
+INSERT INTO Alumno VALUES ('34870225M', 'F65498732', 'Carlos', 'Garcia', 'actiu', '321654987', 'Informática', '1º ASIX', 321654987, '2023-09-24', '2023-10-08', 'confirmada', 'Lucia');
 INSERT INTO Alumno VALUES ('34819182W', 'Lucia', 'Garcia', 'actiu', '654987321', 'Informática', '1º DAW', 654987321, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34812327S', 'Miguel', 'Diaz', 'baixa', '789456123', 'Informática', '1º DAM', 789456123, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34738328W', 'Sofia', 'Fernandez', 'actiu', '321789654', 'Informática', '1º DAW', 321789654, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('34813291W', 'David', 'Gonzalez', 'actiu', '654321789', 'Informática', '1º DAW', 654321789, '2023-10-14', '2023-11-10', 'confirmada', 'Laura');
+INSERT INTO Alumno VALUES ('34813291W', 'D78912345', 'David', 'Gonzalez', 'actiu', '654321789', 'Informática', '1º DAW', 654321789, '2023-10-14', '2023-11-10', 'confirmada', 'Laura');
 INSERT INTO Alumno VALUES ('34812330P', 'Laura', 'González', 'actiu', '987321654', 'Informática', '1º DAM', 987321654, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34812331W', 'Javier', 'Fernández', 'baixa', '123789456', 'Informática', '1º DAW', 123789456, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34812332W', 'Sara', 'Lopez', 'actiu', '789321654', 'Informática', '1º DAW', 789321654, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('34812830W', 'Alberto', 'López', 'actiu', '321456789', 'Informática', '1º ASIX', 321456789, '2023-10-06', '2023-10-13', 'confirmada', 'Marta');
-INSERT INTO Alumno VALUES ('34812334E', 'Marta', 'Garcia', 'actiu', '654123789', 'Informática', '1º ASIX', 654123789, '2023-10-03', '2023-10-15', 'confirmada', 'Pablo');
+INSERT INTO Alumno VALUES ('34812830W', 'H32178965', 'Alberto', 'López', 'actiu', '321456789', 'Informática', '1º ASIX', 321456789, '2023-10-06', '2023-10-13', 'confirmada', 'Marta');
+INSERT INTO Alumno VALUES ('34812334E', 'C45678912', 'Marta', 'Garcia', 'actiu', '654123789', 'Informática', '1º ASIX', 654123789, '2023-10-03', '2023-10-15', 'confirmada', 'Pablo');
 INSERT INTO Alumno VALUES ('34812335W', 'Pablo', 'Sanchez', 'baixa', '987654321', 'Informática', '1º DAW', 987654321, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34813212Z', 'Sofia', 'Diaz', 'actiu', '123456789', 'Informática', '1º DAM', 123456789, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('34812337W', 'Miguel', 'Fernandez', 'actiu', '456789123', 'Informática', '1º DAW', 456789123, '2023-09-20', '2023-10-05', 'confirmada', 'Carlos');
+INSERT INTO Alumno VALUES ('34812337W', 'I65432178', 'Miguel', 'Fernandez', 'actiu', '456789123', 'Informática', '1º DAW', 456789123, '2023-09-20', '2023-10-05', 'confirmada', 'Carlos');
 INSERT INTO Alumno VALUES ('34812539P', 'Carlos', 'Gonzalez', 'actiu', '789123456', 'Informática', '1º DAW', 789123456, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34802859H', 'Ana', 'Rodriguez', 'baixa', '321654987', 'Informática', '1º DAM', 321654987, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34817840T', 'Lucia', 'Sanchez', 'baixa', '654987321', 'Informática', '1º DAW', 654987321, NULL, NULL, NULL, NULL);
@@ -36,7 +36,7 @@ INSERT INTO Alumno VALUES ('87271607Q', 'Laura', 'Rodriguez', 'actiu', '98732165
 INSERT INTO Alumno VALUES ('90592290M', 'Javier', 'Sanchez', 'actiu', '123789456', 'Informática', '1º ASIX', 123789456, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('81327694Q', 'Sofia', 'Lopez', 'actiu', '789321654', 'Informática', '1º ASIX', 789321654, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('62036990X', 'Alberto', 'Martinez', 'baixa', '321456789', 'Informática', '1º ASIX', 321456789, NULL, NULL, NULL, NULL);
-INSERT INTO Alumno VALUES ('01924253G', 'Santiago', 'Abascal', 'actiu', '654123789', 'Informática', '1º ASIX', 654123789, '2023-10-06', '2024-06-30', 'confirmada', 'Pablo');
+INSERT INTO Alumno VALUES ('01924253G', 'F65498732', 'Santiago', 'Abascal', 'actiu', '654123789', 'Informática', '1º ASIX', 654123789, '2023-10-06', '2024-06-30', 'confirmada', 'Pablo');
 
 INSERT INTO Empresa VALUES ('A12345678', 'ambdues', 'Barcelona', 123456789, 'Tecnología', 'TechCorp');
 INSERT INTO Empresa VALUES ('B98765432', 'intensiva', 'Barcelona', 987654321, 'Finanzas', 'FinanCorp');
@@ -139,10 +139,10 @@ INSERT INTO Dominar VALUES ('TEC009', '01924253G');
 
 
 
-INSERT INTO Evaluacion_interna VALUES (1, '34812322W', 'Alumna muy aplicada con gran capacidad de aprendizaje.', 'aprovat', 5, 9, 9, 8, 10, 9, 9, 8);
-INSERT INTO Evaluacion_interna VALUES (2, '34892751C', 'Abandono del ciclo a mitad de semestre por motivos personales.', 'suspes', 2, 3, 4, 3, 2, 2, 3, 1);
-INSERT INTO Evaluacion_interna VALUES (3, '34870225M', 'Buen nivel técnico, pero debe mejorar la puntualidad.', 'aprovat', 4, 7, 7, 7, 5, 8, 8, 7);
-INSERT INTO Evaluacion_interna VALUES (4, '34812324J', 'Excelente actitud y trabajo en equipo. Candidata ideal para DUAL.', 'aprovat', 5, 8, 10, 9, 9, 10, 7, 9);
-INSERT INTO Evaluacion_interna VALUES (5, '01924253G', 'Perfil técnico sólido en robótica. Muy autónomo.', 'aprovat', 4, 8, 6, 7, 8, 8, 10, 10);
-INSERT INTO Evaluacion_interna VALUES (6, '34819182W', 'Buen desempeño general, falta reforzar comunicación.', 'aprovat', 4, 6, 7, 5, 8, 7, 6, 6);
-INSERT INTO Evaluacion_interna VALUES (7, '34812327S', 'No superó los módulos troncales. Falta de interés.', 'suspes', 1, 2, 3, 2, 4, 2, 2, 2);
+INSERT INTO Evaluacion_interna VALUES (1, '34812322W', 'Alumna muy aplicada con gran capacidad de aprendizaje.', 'aprovat', 5, 9, 8, 10, 9, 9, 8);
+INSERT INTO Evaluacion_interna VALUES (2, '34892751C', 'Abandono del ciclo a mitad de semestre por motivos personales.', 'suspes', 2, 4, 3, 2, 2, 3, 1);
+INSERT INTO Evaluacion_interna VALUES (3, '34870225M', 'Buen nivel técnico, pero debe mejorar la puntualidad.', 'aprovat', 4, 7, 7, 5, 8, 8, 7);
+INSERT INTO Evaluacion_interna VALUES (4, '34812324J', 'Excelente actitud y trabajo en equipo. Candidata ideal para DUAL.', 'aprovat', 5, 10, 9, 9, 10, 7, 9);
+INSERT INTO Evaluacion_interna VALUES (5, '01924253G', 'Perfil técnico sólido en robótica. Muy autónomo.', 'aprovat', 4, 6, 7, 8, 8, 10, 10);
+INSERT INTO Evaluacion_interna VALUES (6, '34819182W', 'Buen desempeño general, falta reforzar comunicación.', 'aprovat', 4, 7, 5, 8, 7, 6, 6);
+INSERT INTO Evaluacion_interna VALUES (7, '34812327S', 'No superó los módulos troncales. Falta de interés.', 'suspes', 1, 3, 2, 4, 2, 2, 2);
