@@ -4,6 +4,7 @@ create database proyecto;
 
 CREATE TABLE Alumno(
     DNI_Alumne varchar (15) CONSTRAINT Alumno_DNI_Alumne_pk PRIMARY KEY,
+    CIF_NIF_Empresa_Alumno varchar (30),
     Nombre varchar CONSTRAINT Alumno_Nombre not null,
     Apellido varchar (30) CONSTRAINT Alumno_Apellido not null,
     Estado_Alumne varchar (10) CONSTRAINT Alumno_Estado not null CHECK (Estado_Alumne ='actiu' OR Estado_Alumne ='baixa'),
@@ -15,6 +16,8 @@ CREATE TABLE Alumno(
     Fecha_Finalizacion date,
     Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica CHECK (Estado_Practica ='proposada' OR Estado_Practica ='confirmada' OR Estado_Practica ='finalitzada' OR Estado_Practica ='cancelada'),
     Tutor_Empresa varchar
+    CONSTRAINT Recibir_CIF_NIF_Empresa_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa),
+
 );
 
 CREATE TABLE Tecnologia(
