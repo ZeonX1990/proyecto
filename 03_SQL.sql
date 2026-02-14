@@ -53,6 +53,14 @@ WHERE Estado_Practica = 'proposada'OR a.Estado_Practica IS NULL
 
 --Alumnes actius amb puntuació global superior a 7, mostrant també la mitjana global.
 
+SELECT a.DNI_Alumne, a.Nombre, a.Apellido, e.Puntuacion, (SELECT AVG(Puntuacion) FROM Evaluacion_interna) AS Mitjana_Global -- 8
+FROM Alumno a
+JOIN Evaluacion_interna e ON a.DNI_Alumne = e.DNI_Alumne_Evaluacion_interna
+WHERE a.Estado_Alumne = 'actiu' AND e.Puntuacion > 7;
 
 --Empreses d’un sector concret (per exemple, ‘Tecnologia’ o ‘Educació’) que no han rebut cap enviament.
 
+SELECT emp.CIF_NIF_Empresa, emp.Nombre -- 9
+FROM Empresa emp
+LEFT JOIN Recibir r ON emp.CIF_NIF_Empresa = r.CIF_NIF_Empresa_Recibir
+WHERE emp.Sector = 'Tecnología' AND r.ID_Curriculum_Recibir IS NULL;
