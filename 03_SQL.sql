@@ -53,10 +53,10 @@ WHERE Estado_Practica = 'proposada'OR a.Estado_Practica IS NULL
 
 --Alumnes actius amb puntuació global superior a 7, mostrant també la mitjana global.
 
-SELECT a.DNI_Alumne, a.Nombre, a.Apellido, e.Puntuacion, (SELECT AVG(Puntuacion) FROM Evaluacion_interna) AS Mitjana_Global
+SELECT a.DNI_Alumne, a.Nombre, a.Apellido, (SELECT (Trabajo_Equipo + Comunicacion + Puntualidad + Actitud + Nivel_Tecnico + Autonomia) AS Puntuacion_Global FROM Evaluacion_interna), AVG(SELECT (Trabajo_Equipo + Comunicacion + Puntualidad + Actitud + Nivel_Tecnico + Autonomia) AS Puntuacion_Global FROM Evaluacion_interna) AS Mitjana_Global
 FROM Alumno a
 JOIN Evaluacion_interna e ON a.DNI_Alumne = e.DNI_Alumne_Evaluacion_interna
-WHERE a.Estado_Alumne = 'actiu' AND e.Puntuacion > 7;
+WHERE a.Estado_Alumne = 'actiu' AND e.Puntuacion_Global > 7;
 
 --Empreses d’un sector concret (per exemple, ‘Tecnologia’ o ‘Educació’) que no han rebut cap enviament.
 
