@@ -1,8 +1,6 @@
 --Llistat d’alumnes amb puntuació global, ordenat descendent (rànquing).
 
-SELECT 
-    a.Nombre,a.Apellido,e.RA2_IPO AS Estado_RA2,
-    (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) AS Puntuacion_Global
+SELECT a.Nombre,a.Apellido,e.RA2_IPO AS Estado_RA2, (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) AS Puntuacion_Global
 FROM Evaluacion_interna e
 JOIN Alumno a ON a.DNI_Alumne = e.DNI_Alumne_Evaluacion_interna
 ORDER BY Puntuacion_Global DESC;
