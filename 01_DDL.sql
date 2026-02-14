@@ -83,7 +83,7 @@ CREATE TABLE Buscar (
 
 CREATE TABLE Dominar (
     ID_Tecno_Dominar varchar (50),
-    DNI_Alumne_Dominar varchar (30),
+    DNI_Alumne_Dominar varchar (15),
     CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,DNI_Alumne_Dominar),
     CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
     CONSTRAINT Dominar_DNI_Alumne_Dominar_fk FOREIGN KEY (DNI_Alumne_Dominar) REFERENCES Alumno(DNI_Alumne)
