@@ -27,7 +27,7 @@ CREATE TABLE Tecnologia(
 
 CREATE TABLE Evaluacion_interna (
     ID_Evaluacion int CONSTRAINT Evaluacion_interna_ID_Evaluacion_pk PRIMARY KEY,
-    DNI_Alumne_Evaluacion_interna varchar (15),
+    DNI_Alumne_Evaluacion_interna varchar (15) NOT NULL,
     Observaciones varchar,
     RA2_IPO varchar CONSTRAINT Evaluacion_interna_RA2_IPO not null CHECK (RA2_IPO ='aprovat' OR RA2_IPO ='suspes'),
     Modules_troncales int,
@@ -42,7 +42,7 @@ CREATE TABLE Evaluacion_interna (
 
 CREATE TABLE Curriculum (
     ID_Curriculum int CONSTRAINT Curriculum_ID_Curriculum_pk PRIMARY KEY,
-    DNI_Alumne_Curriculum varchar (15),
+    DNI_Alumne_Curriculum varchar (15) NOT NULL,
     Enlace varchar (50) CONSTRAINT Curriculum_Enlace not null,
     Resumen varchar (50),
     Estado varchar (50) CONSTRAINT Curriculum_Estado NOT NULL CHECK (Estado ='actiu' OR Estado ='obsolet'),
