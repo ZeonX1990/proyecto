@@ -8,6 +8,16 @@ DELETE FROM Dominar;
 DELETE FROM Evaluacion_interna;
 
 
+INSERT INTO Empresa VALUES ('A12345678', 'ambdues', 'Barcelona', 123456789, 'Tecnología', 'TechCorp');
+INSERT INTO Empresa VALUES ('B98765432', 'intensiva', 'Barcelona', 987654321, 'Finanzas', 'FinanCorp');
+INSERT INTO Empresa VALUES ('C45678912', 'general', 'Barcelona', 456789123, 'Salud', 'HealthCorp');
+INSERT INTO Empresa VALUES ('D78912345', 'intensiva', 'Barcelona', 789123456, 'Educación', 'EduCorp');
+INSERT INTO Empresa VALUES ('E32165498', 'intensiva', 'Barcelona', 321654987, 'Turismo', 'TourCorp');
+INSERT INTO Empresa VALUES ('F65498732', 'ambdues', 'Barcelona', 654987321, 'Construcción', 'BuildCorp');
+INSERT INTO Empresa VALUES ('G78945612', 'general', 'Barcelona', 789456123, 'Transporte', 'TransCorp');
+INSERT INTO Empresa VALUES ('H32178965', 'general', 'Barcelona', 321789654, 'Energía', 'EnergyCorp');
+INSERT INTO Empresa VALUES ('I65432178', 'intensiva', 'Barcelona', 654321789, 'Alimentación', 'FoodCorp');
+INSERT INTO Empresa VALUES ('J98732165', 'ambdues', 'Barcelona', 987321654, 'Moda', 'FashionCorp');
 
 INSERT INTO Alumno VALUES ('34892751C', 'Juan', 'Perez', 'baixa', '123456789', 'Informática', '1º ASIX', 123456789, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('34812322W', 'A12345678', 'Maria', 'Gomez', 'actiu', '987654321', 'Informática', '1º DAW', 987654321, '2023-09-16', '2023-09-25', 'confirmada', 'Jose');
@@ -37,17 +47,6 @@ INSERT INTO Alumno VALUES ('90592290M', 'Javier', 'Sanchez', 'actiu', '123789456
 INSERT INTO Alumno VALUES ('81327694Q', 'Sofia', 'Lopez', 'actiu', '789321654', 'Informática', '1º ASIX', 789321654, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('62036990X', 'Alberto', 'Martinez', 'baixa', '321456789', 'Informática', '1º ASIX', 321456789, NULL, NULL, NULL, NULL);
 INSERT INTO Alumno VALUES ('01924253G', 'F65498732', 'Santiago', 'Abascal', 'actiu', '654123789', 'Informática', '1º ASIX', 654123789, '2023-10-06', '2024-06-30', 'confirmada', 'Pablo');
-
-INSERT INTO Empresa VALUES ('A12345678', 'ambdues', 'Barcelona', 123456789, 'Tecnología', 'TechCorp');
-INSERT INTO Empresa VALUES ('B98765432', 'intensiva', 'Barcelona', 987654321, 'Finanzas', 'FinanCorp');
-INSERT INTO Empresa VALUES ('C45678912', 'general', 'Barcelona', 456789123, 'Salud', 'HealthCorp');
-INSERT INTO Empresa VALUES ('D78912345', 'intensiva', 'Barcelona', 789123456, 'Educación', 'EduCorp');
-INSERT INTO Empresa VALUES ('E32165498', 'intensiva', 'Barcelona', 321654987, 'Turismo', 'TourCorp');
-INSERT INTO Empresa VALUES ('F65498732', 'ambdues', 'Barcelona', 654987321, 'Construcción', 'BuildCorp');
-INSERT INTO Empresa VALUES ('G78945612', 'general', 'Barcelona', 789456123, 'Transporte', 'TransCorp');
-INSERT INTO Empresa VALUES ('H32178965', 'general', 'Barcelona', 321789654, 'Energía', 'EnergyCorp');
-INSERT INTO Empresa VALUES ('I65432178', 'intensiva', 'Barcelona', 654321789, 'Alimentación', 'FoodCorp');
-INSERT INTO Empresa VALUES ('J98732165', 'ambdues', 'Barcelona', 987321654, 'Moda', 'FashionCorp');
 
 INSERT INTO Curriculum VALUES (1, '34812322W', 'https://example.com/curriculum1', 'Resumen del curriculum 1', 'actiu', '1.0', '2023-09-01', '2023-09-15');
 INSERT INTO Curriculum VALUES (2, '34812324J', 'https://example.com/curriculum2', 'Resumen del curriculum 2', 'actiu', '1.0', '2023-09-05', '2023-09-20');
