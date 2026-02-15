@@ -15,7 +15,7 @@ CREATE TABLE Alumno(
     Fecha_Inicio date,
     Fecha_Finalizacion date,
     Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica CHECK (Estado_Practica ='proposada' OR Estado_Practica ='confirmada' OR Estado_Practica ='finalitzada' OR Estado_Practica ='cancelada'),
-    Tutor_Empresa varchar
+    Tutor_Empresa varchar 
     CONSTRAINT Alumno_CIF_NIF_Empresa_Alumno_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa),
 
 );
