@@ -145,3 +145,34 @@ INSERT INTO Evaluacion_interna VALUES (4, '34812324J', 'Excelente actitud y trab
 INSERT INTO Evaluacion_interna VALUES (5, '01924253G', 'Perfil técnico sólido en robótica. Muy autónomo.', 'aprovat', 4, 6, 7, 8, 8, 10, 10);
 INSERT INTO Evaluacion_interna VALUES (6, '34819182W', 'Buen desempeño general, falta reforzar comunicación.', 'aprovat', 4, 7, 5, 8, 7, 6, 6);
 INSERT INTO Evaluacion_interna VALUES (7, '34812327S', 'No superó los módulos troncales. Falta de interés.', 'suspes', 1, 3, 2, 4, 2, 2, 2);
+
+-- 1. Asignar empresa y tutor a un alumno que estaba en espera (gestión de asignación)
+UPDATE Alumno 
+SET CIF_NIF_Empresa_Alumno = 'B98765432', 
+    Estado_Practica = 'confirmada', 
+    Tutor_Empresa = 'Marta Rodriguez',
+    Fecha_Inicio = '2024-03-01'
+WHERE DNI_Alumne = '34812332W';
+
+-- 2. Marcar como obsoletos los currículums antiguos para limpiar el sistema
+UPDATE Curriculum 
+SET Estado_Curriculum = 'obsolet' 
+WHERE Data_Final < '2023-10-01';
+
+-- 3. Actualizar la valoración de una entrevista tras recibir el feedback técnico
+UPDATE Recibir 
+SET Valoracion_Recibir = 9.50, 
+    Estado_Recibir = 'entrevista' 
+WHERE CIF_NIF_Empresa_Recibir = 'G78945612' AND ID_Curriculum_Recibir = 4;
+
+-- 1. Eliminar evaluaciones de alumnos que han causado baja definitiva
+DELETE FROM Evaluacion_interna 
+WHERE DNI_Alumne_Evaluacion_interna IN (SELECT DNI_Alumne FROM Alumno WHERE Estado_Alumne = 'baixa');
+
+-- 2. Limpiar el historial de envíos rechazados antiguos para optimizar la tabla
+DELETE FROM Recibir 
+WHERE Estado_Recibir = 'rebutjat' AND Data_Recepcio < '2023-10-01';
+
+-- 3. Eliminar tecnologías que no tienen demanda por parte de las empresas
+DELETE FROM Tecnologia 
+WHERE ID_Tecnologia NOT IN (SELECT ID_Tecnologia_Buscar FROM Buscar);
