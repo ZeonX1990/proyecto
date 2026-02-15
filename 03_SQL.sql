@@ -110,11 +110,19 @@ SELECT
     a.DNI_Alumne, 
     a.Nombre, 
     (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) AS Puntuacion_Global, 
-    (SELECT AVG(Trabajo_Equipo + Comunicacion + Puntualidad + Actitud + Nivel_Tecnico + Autonomia) FROM Evaluacion_interna) AS Mitjana_Global
+    (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) / 6.0 AS Mitjana_Alumno
 FROM Alumno a
 JOIN Evaluacion_interna e ON a.DNI_Alumne = e.DNI_Alumne_Evaluacion_interna
 WHERE a.Estado_Alumne = 'actiu'
-GROUP BY a.DNI_Alumne, a.Nombre, e.Trabajo_Equipo, e.Comunicacion, e.Puntualidad, e.Actitud, e.Nivel_Tecnico, e.Autonomia
+GROUP BY 
+    a.DNI_Alumne, 
+    a.Nombre, 
+    e.Trabajo_Equipo, 
+    e.Comunicacion, 
+    e.Puntualidad, 
+    e.Actitud, 
+    e.Nivel_Tecnico, 
+    e.Autonomia
 HAVING (e.Trabajo_Equipo + e.Comunicacion + e.Puntualidad + e.Actitud + e.Nivel_Tecnico + e.Autonomia) > 42;
 
 -- Muestra DNI, Nombre y la suma de las notas del alumno.

@@ -2,6 +2,16 @@ create database proyecto;
 
 \c proyecto
 
+
+CREATE TABLE Empresa (
+    CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
+    DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (DUAL ='intensiva' OR DUAL ='general' OR DUAL ='ambdues'),
+    Ubicacion varchar (30) CONSTRAINT Empresa_Ubicacion not null,
+    Telefono int CONSTRAINT Empresa_Telefono not null,
+    Sector varchar (30) CONSTRAINT Empresa_Sector not null,
+    Nombre varchar CONSTRAINT Empresa_Nombre not null
+);
+
 CREATE TABLE Alumno(
     DNI_Alumne varchar (15) CONSTRAINT Alumno_DNI_Alumne_pk PRIMARY KEY,
     CIF_NIF_Empresa_Alumno varchar (30),
@@ -51,14 +61,6 @@ CREATE TABLE Curriculum (
     CONSTRAINT Curriculum_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Curriculum) REFERENCES Alumno(DNI_Alumne) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE Empresa (
-    CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
-    DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (DUAL ='intensiva' OR DUAL ='general' OR DUAL ='ambdues'),
-    Ubicacion varchar (30) CONSTRAINT Empresa_Ubicacion not null,
-    Telefono int CONSTRAINT Empresa_Telefono not null,
-    Sector varchar (30) CONSTRAINT Empresa_Sector not null,
-    Nombre varchar CONSTRAINT Empresa_Nombre not null
-);
 
 CREATE TABLE Recibir (
     ID_Curriculum_Recibir int,
