@@ -15,9 +15,8 @@ CREATE TABLE Alumno(
     Fecha_Inicio date,
     Fecha_Finalizacion date,
     Estado_Practica varchar (30) CONSTRAINT Alumno_Estado_Practica CHECK (Estado_Practica ='proposada' OR Estado_Practica ='confirmada' OR Estado_Practica ='finalitzada' OR Estado_Practica ='cancelada'),
-    Tutor_Empresa varchar 
-    CONSTRAINT Alumno_CIF_NIF_Empresa_Alumno_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa),
-
+    Tutor_Empresa varchar,
+    CONSTRAINT Alumno_CIF_NIF_Empresa_Alumno_fk FOREIGN KEY (CIF_NIF_Empresa_Alumno) REFERENCES Empresa(CIF_NIF_Empresa) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 CREATE TABLE Tecnologia(
@@ -37,7 +36,7 @@ CREATE TABLE Evaluacion_interna (
     Actitud int,
     Nivel_Tecnico int,
     Autonomia int,
-    CONSTRAINT Evaluacion_interna_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Evaluacion_interna) REFERENCES Alumno(DNI_Alumne)
+    CONSTRAINT Evaluacion_interna_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Evaluacion_interna) REFERENCES Alumno(DNI_Alumne) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Curriculum (
@@ -49,7 +48,7 @@ CREATE TABLE Curriculum (
     Version varchar (50),
     Fecha_Creacion date,
     Fecha_Actualizacion date,
-    CONSTRAINT Curriculum_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Curriculum) REFERENCES Alumno(DNI_Alumne)
+    CONSTRAINT Curriculum_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Curriculum) REFERENCES Alumno(DNI_Alumne) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Empresa (
@@ -71,22 +70,22 @@ CREATE TABLE Recibir (
     Estado_Recibir varchar (30) CONSTRAINT Recibir_Estado NOT NULL CHECK (Estado_Recibir ='vist' OR Estado_Recibir ='enviat' OR Estado_Recibir ='entrevista' OR Estado_Recibir ='rebutjat' OR Estado_Recibir ='acceptat'),
     Data_Enviamiento date,
     CONSTRAINT Recibir_pk PRIMARY KEY(ID_Curriculum_Recibir,CIF_NIF_Empresa_Recibir),
-    CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum),
-    CONSTRAINT Recibir_CIF_NIF_Empresa_Recibir_fk FOREIGN KEY (CIF_NIF_Empresa_Recibir) REFERENCES Empresa(CIF_NIF_Empresa)
+    CONSTRAINT Recibir_ID_Curriculum_Recibir_fk FOREIGN KEY (ID_Curriculum_Recibir) REFERENCES Curriculum(ID_Curriculum) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT Recibir_CIF_NIF_Empresa_Recibir_fk FOREIGN KEY (CIF_NIF_Empresa_Recibir) REFERENCES Empresa(CIF_NIF_Empresa) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Buscar (
     ID_Tecno_Buscar varchar (50),
     CIF_NIF_Empresa_Buscar varchar (30),
     CONSTRAINT Buscar_pk PRIMARY KEY(ID_Tecno_Buscar,CIF_NIF_Empresa_Buscar),
-    CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno),
-    CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa)
+    CONSTRAINT Buscar_ID_Tecno_Buscar_fk FOREIGN KEY (ID_Tecno_Buscar) REFERENCES Tecnologia(ID_Tecno) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT Buscar_CIF_NIF_Empresa_Buscar_fk FOREIGN KEY (CIF_NIF_Empresa_Buscar) REFERENCES Empresa(CIF_NIF_Empresa) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE Dominar (
     ID_Tecno_Dominar varchar (50),
     DNI_Alumne_Dominar varchar (15),
     CONSTRAINT Dominar_pk PRIMARY KEY(ID_Tecno_Dominar,DNI_Alumne_Dominar),
-    CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno),
-    CONSTRAINT Dominar_DNI_Alumne_Dominar_fk FOREIGN KEY (DNI_Alumne_Dominar) REFERENCES Alumno(DNI_Alumne)
+    CONSTRAINT Dominar_ID_Tecno_Dominar_fk FOREIGN KEY (ID_Tecno_Dominar) REFERENCES Tecnologia(ID_Tecno) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT Dominar_DNI_Alumne_Dominar_fk FOREIGN KEY (DNI_Alumne_Dominar) REFERENCES Alumno(DNI_Alumne) ON UPDATE CASCADE ON DELETE CASCADE
 );
