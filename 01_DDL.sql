@@ -2,7 +2,6 @@ create database proyecto;
 
 \c proyecto
 
-
 CREATE TABLE Empresa (
     CIF_NIF_Empresa varchar (30) CONSTRAINT Empresa_CIF_NIF_Empresa_pk PRIMARY KEY,
     DUAL varchar (10) CONSTRAINT Empresa_DUAL not null CHECK (DUAL ='intensiva' OR DUAL ='general' OR DUAL ='ambdues'),
@@ -60,7 +59,6 @@ CREATE TABLE Curriculum (
     Fecha_Actualizacion date,
     CONSTRAINT Curriculum_DNI_Alumne_pk FOREIGN KEY (DNI_Alumne_Curriculum) REFERENCES Alumno(DNI_Alumne) ON UPDATE CASCADE ON DELETE CASCADE
 );
-
 
 CREATE TABLE Recibir (
     ID_Curriculum_Recibir int,
